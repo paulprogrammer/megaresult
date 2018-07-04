@@ -1,0 +1,14 @@
+{
+	"name": "megaresult/megaresult",
+	"description": "A sporting event results display plugin",
+	"license": "BSD License",
+	"require": {
+		"mustache/mustache": "*"
+	},
+	"authors": [
+		{
+			"name": "Paul Williams",
+			"email": "paulprogrammer@gmail.com"
+		}
+	]
+}
