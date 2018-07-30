@@ -35,7 +35,7 @@ class WP_page_megaresult {
     // Add a filter to the save post to inject out template into the page cache
     add_filter(
       'wp_insert_post_data', 
-      array( $this, 'register_project_templates' ) 
+      array( $this, 'add_new_template' ) 
     );
 
 
