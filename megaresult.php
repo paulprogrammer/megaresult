@@ -30,9 +30,9 @@ class WP_page_megaresult {
 				'theme_page_templates', array( $this, 'add_new_template' )
 			);
 		}
-	}
+	
 
-  // Add a filter to the save post to inject out template into the page cache
+    // Add a filter to the save post to inject out template into the page cache
     add_filter(
       'wp_insert_post_data', 
       array( $this, 'register_project_templates' ) 
@@ -45,6 +45,7 @@ class WP_page_megaresult {
       'template_include', 
       array( $this, 'view_project_template') 
     );
+  }
 
   /**
    * Adds our template to the page dropdown for v4.7+
