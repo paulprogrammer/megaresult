@@ -8,7 +8,7 @@ Author URI: tbd
 */
 
 
-public function mr_megaresult_shortcode_handler( $attrs, $content=null) {
+function mr_megaresult_shortcode_handler( $attrs, $content=null) {
   return "look, a shortcode!"
 }
 
