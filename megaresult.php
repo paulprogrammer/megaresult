@@ -9,7 +9,7 @@ Author URI: tbd
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 function mr_megaresult_shortcode_handler( $attrs, $content=null) {
-  return "look, a shortcode! has attribs: " + print_r($attrs,true);
+  return "look, a shortcode!";
 }
 add_shortcode( 'megaresult', 'mr_megaresult_shortcode_handler' );
 
