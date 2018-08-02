@@ -21,12 +21,12 @@ $contests = $wpdb->get_results("select * from mr_event");
 	<tbody>
 		<?php foreach($contests as $contest): ?>
 			<tr>
-				<td><?php= $contest->id ?></td>
-				<td><?php= $contest->event_name ?></td>
-				<td><?php= $contest->event_slug ?></td>
-				<td><?php= $contest->venue ?></td>
-				<td><?php= $contest->start_date ?></td>
-				<td><?php= $contest->end_date ?></td>
+				<td><?php echo $contest->id; ?></td>
+				<td><?php echo $contest->event_name; ?></td>
+				<td><?php echo $contest->event_slug; ?></td>
+				<td><?php echo $contest->venue; ?></td>
+				<td><?php echo $contest->start_date; ?></td>
+				<td><?php echo $contest->end_date; ?></td>
 			</tr>
 		<?php endforeach; ?>
 	</tbody>
