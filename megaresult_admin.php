@@ -3,8 +3,20 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 global $wpdb;
 
 $contests = $wpdb->get_results("select * from mr_event");
+
+wp_enqueue_style("megaresult_admin", get_template_directory_uri() . '/megaresult_admin.css');
+wp_enqueue_script("jquery");
+wp_enqueue_style("datatables", get_template_directory_uri() . '/js/datatables.min.css');
+wp_enqueue_script("datatables", get_template_directory_uri() . '/js/datatables.min.js');
 ?>
-<div>
+<div id="megaresult-admin">
+
+	<h1>MegaResult Administration</h1>
+
+	Administrate your contests here.  Add a new contest by using the "add contest" button below.
+	Add or administrate results for your existing contests below.
+
+
 <button id="add-contest">Add Contest</button>
 
 <table>
