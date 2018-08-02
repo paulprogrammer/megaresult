@@ -6,8 +6,8 @@ $contests = $wpdb->get_results("select * from mr_event");
 
 wp_enqueue_style("megaresult_admin", get_template_directory_uri() . '/megaresult_admin.css');
 wp_enqueue_script("jquery");
-wp_enqueue_style("datatables", get_template_directory_uri() . '/js/datatables.min.css');
-wp_enqueue_script("datatables", get_template_directory_uri() . '/js/datatables.min.js');
+wp_enqueue_style("datatables", plugins_url( '/js/datatables.min.css', __FILE__));
+wp_enqueue_script("datatables", plugins_url( '/js/datatables.min.js', __FILE__));
 ?>
 <div id="megaresult-admin">
 
