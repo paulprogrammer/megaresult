@@ -16,9 +16,9 @@ function mr_megaresult_shortcode_handler( $attrs, $content=null) {
 add_shortcode( 'megaresult', 'mr_megaresult_shortcode_handler' );
 
 function mr_megaresult_admin_menu() {
-  add_menu_page("MegaResult", "MegaResult", "manage_options", "megaresult-plugin/megaresult-admin.php", "mr_megaresult_admin_init");
+  add_menu_page("MegaResult", "MegaResult", "manage_options", "megaresult-plugin", "mr_megaresult_admin_init","dashicons-awards");
 }
 function mr_megaresult_admin_init() {
-
+  include 'megaresult_admin.php';
 }
 add_action("admin_menu", "mr_megaresult_admin_menu");
