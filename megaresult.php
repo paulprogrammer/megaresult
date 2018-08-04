@@ -29,5 +29,13 @@ function mr_do_upsert_results() {
 		// Bad post or nonce.  ERROOOOOOR
 		wp_die( __("Invalid nonce specified", "MegaResult"))
 	}
+
+	$input = $_FILES["results_file"]["tmp_name"];
+	$contest_scores = 0;
+	$handle = fopen($input, "r");
+	while( !feof($handle)) {
+		fgets($handle);
+		$contest_scores++;
+	}
 }
 add_action("mr_upsert_results","mr_do_upsert_results");"

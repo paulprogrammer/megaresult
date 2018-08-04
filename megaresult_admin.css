@@ -1,3 +1,8 @@
 #megaresult-admin {
 	padding-top: 4em;
 }
+
+#mr-result-upload-confirmation {
+	border-left: 2px green solid;
+	background-color: #eee;
+}
