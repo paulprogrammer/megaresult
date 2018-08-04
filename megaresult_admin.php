@@ -10,6 +10,8 @@ wp_enqueue_style("datatables", plugins_url( '/js/datatables.min.css', __FILE__))
 wp_enqueue_script("datatables", plugins_url( '/js/datatables.min.js', __FILE__));
 wp_enqueue_style( 'dashicons' );
 
+$mr_form_nonce = wp_create_nonce( 'mr_form_nonce' ); 
+
 add_thickbox();
 ?>
 <div id="megaresult-admin">
@@ -23,8 +25,15 @@ add_thickbox();
 <button id="add-contest">Add Contest</button>
 
 <div id="my-content-id" style="display:none;">
-	Doing Upload!<p>
-	<input type="file" accept="text/csv">
+	<h2>Upload results</h2>
+	<p>Choose a CSV file that conforms to the results template</p>
+	<form method="POST" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" enctype="multipart/form-data"
+		id="mr_upsert_results">
+		<input type="hidden" name="action" value="mr_upsert_results"/>
+		<input type="hidden" name="mr_form_nonce" value="<?php echo $mr_form_nonce; ?>"/>
+		<input required type="file" accept="text/csv"/><p/>
+		<button type="submit">Upload</button>
+	</form>
 </div>
 
 <table>
@@ -48,7 +57,7 @@ add_thickbox();
 				<td><?php echo $contest->venue; ?></td>
 				<td><?php echo $contest->start_date; ?></td>
 				<td><?php echo $contest->end_date; ?></td>
-				<td><a href="#TB_inline?width=600&height=550&inlineId=my-content-id" class="thickbox"><span class="dashicons dashicons-welcome-add-page"></span></a></td>
+				<td><a href="#TB_inline?width=600&height=550&inlineId=my-content-id&" class="thickbox"><span class="dashicons dashicons-welcome-add-page"></span></a></td>
 			</tr>
 		<?php endforeach; ?>
 	</tbody>
