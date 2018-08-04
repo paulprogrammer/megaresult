@@ -8,6 +8,9 @@ wp_enqueue_style("megaresult_admin", plugins_url( '/megaresult_admin.css', __FIL
 wp_enqueue_script("jquery");
 wp_enqueue_style("datatables", plugins_url( '/js/datatables.min.css', __FILE__));
 wp_enqueue_script("datatables", plugins_url( '/js/datatables.min.js', __FILE__));
+wp_enqueue_style( 'dashicons' );
+
+add_thickbox();
 ?>
 <div id="megaresult-admin">
 
@@ -19,6 +22,11 @@ wp_enqueue_script("datatables", plugins_url( '/js/datatables.min.js', __FILE__))
 
 <button id="add-contest">Add Contest</button>
 
+<div id="my-content-id" style="display:none;">
+	Doing Upload!<p>
+	<input type="file" accept="text/csv">
+</div>
+
 <table>
 	<thead>
 		<tr>
@@ -28,6 +36,7 @@ wp_enqueue_script("datatables", plugins_url( '/js/datatables.min.js', __FILE__))
 			<th>Venue</th>
 			<th>Start Date</th>
 			<th>End Date</th>
+			<th>Add Results</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -39,6 +48,7 @@ wp_enqueue_script("datatables", plugins_url( '/js/datatables.min.js', __FILE__))
 				<td><?php echo $contest->venue; ?></td>
 				<td><?php echo $contest->start_date; ?></td>
 				<td><?php echo $contest->end_date; ?></td>
+				<td><a href="#TB_inline?width=600&height=550&inlineId=my-content-id" class="thickbox"><span class="dashicons dashicons-welcome-add-page"></span></a></td>
 			</tr>
 		<?php endforeach; ?>
 	</tbody>
