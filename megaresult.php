@@ -27,7 +27,7 @@ function mr_do_upsert_results() {
 	if( !( isset($_POST['mr_upsert_results']) 
 		   && wp_verify_nonce( $_POST['nds_add_user_meta_nonce'], 'nds_add_user_meta_form_nonce') )) {
 		// Bad post or nonce.  ERROOOOOOR
-		wp_die( __("Invalid nonce specified", "MegaResult"))
+		wp_die( __("Invalid nonce specified", "MegaResult"));
 	}
 
 	$input = $_FILES["results_file"]["tmp_name"];
@@ -38,4 +38,4 @@ function mr_do_upsert_results() {
 		$contest_scores++;
 	}
 }
-add_action("mr_upsert_results","mr_do_upsert_results");"
+add_action("mr_upsert_results","mr_do_upsert_results");
