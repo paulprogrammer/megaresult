@@ -27,11 +27,7 @@ function mr_megaresult_admin_init() {
 
 # upsert the contest results
 function mr_do_upsert_results() {
-	if( !( isset($_POST['mr_upsert_results']) 
-		   && wp_verify_nonce( $_POST['nds_add_user_meta_nonce'], 'nds_add_user_meta_form_nonce') )) {
-		// Bad post or nonce.  ERROOOOOOR
-		wp_die( __("Invalid nonce specified", "MegaResult"));
-	}
+	check_admin_referrer("upsert_results", "mr_upsert_results_nonce");
 
 	$input = $_FILES["results_file"]["tmp_name"];
 	$contest_scores = 0;

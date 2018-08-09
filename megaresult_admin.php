@@ -10,8 +10,6 @@ wp_enqueue_style("datatables", plugins_url( '/js/datatables.min.css', __FILE__))
 wp_enqueue_script("datatables", plugins_url( '/js/datatables.min.js', __FILE__), ["jquery"]);
 wp_enqueue_style( 'dashicons' );
 
-$mr_form_nonce = wp_create_nonce( 'mr_form_nonce' ); 
-
 add_thickbox();
 ?>
 <div id="mr-result-upload-modal" style="display:none;">
@@ -19,8 +17,8 @@ add_thickbox();
 	<p>Choose a CSV file that conforms to the results template</p>
 	<form method="POST" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" enctype="multipart/form-data"
 		id="mr_upsert_results">
+		<?php wp_nonce_field('mr_upsert_results_nonce'); ?>
 		<input type="hidden" name="action" value="upsert_results"/>
-		<input type="hidden" name="mr_form_nonce" value="<?php echo $mr_form_nonce; ?>"/>
 		<input required name="results_file" type="file" accept="text/csv"/><p/>
 		<button type="submit">Upload</button>
 	</form>
