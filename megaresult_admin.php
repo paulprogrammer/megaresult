@@ -19,7 +19,7 @@ add_thickbox();
 	<p>Choose a CSV file that conforms to the results template</p>
 	<form method="POST" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" enctype="multipart/form-data"
 		id="mr_upsert_results">
-		<input type="hidden" name="action" value="mr_upsert_results"/>
+		<input type="hidden" name="action" value="upsert_results"/>
 		<input type="hidden" name="mr_form_nonce" value="<?php echo $mr_form_nonce; ?>"/>
 		<input required name="results_file" type="file" accept="text/csv"/><p/>
 		<button type="submit">Upload</button>
